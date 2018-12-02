@@ -63,8 +63,9 @@ def main():
     assert primeFactors(330) == [2, 3, 5, 11]
     assert pangram('The quick brown fox jumps over the lazy dog')
     assert not pangram('The quick brown fox jumped over the lazy dog')
-    print(sort([5, 3, 4, 2, 1]))
-    print(rotate(13, 'abcdefghijklmnopqrstuvwxyz'))
+    assert sort([5, 3, 4, 2, 1]) == [1, 2, 3, 4, 5]
+    assert rotate(13,
+                  'abcdefghijklmnopqrstuvwxyz') == 'nopqrstuvwxyzabcdefghijklm'
 
 
 def reverse(string: str) -> str:
