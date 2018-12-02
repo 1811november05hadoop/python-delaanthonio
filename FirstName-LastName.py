@@ -39,16 +39,18 @@ Happy Scripting!
 © 2018 Revature. All rights reserved.
 '''
 
-
 def main():
     '''
     Use the main function for testing purposes and to show me results for all functions.
     '''
-    print(reverse('example'))
-    print(acronym('Portable Network Graphics'))
-    print(whichTriangle(5.0, 6.0, 7.0))
-    print(whichTriangle(5.0, 6.0, 5.0))
-    print(whichTriangle(5.0, 5.0, 5.0))
+    assert reverse('example') == 'elpmaxe'
+    assert acronym('Portable Network Graphics') == 'PNG'
+    assert whichTriangle(5.0, 6.0, 7.0) == 'scalene'
+    assert whichTriangle(6.0, 5.0, 7.0) == 'scalene'
+    assert whichTriangle(5.0, 6.0, 5.0) == 'isosceles'
+    assert whichTriangle(5.0, 5.0, 6.0) == 'isosceles'
+    assert whichTriangle(6.0, 5.0, 5.0) == 'isosceles'
+    assert whichTriangle(5.0, 5.0, 6.0 - 1.0) == 'equilateral'
     print(scrabble('Xanax'))
     print(armstrong(153))
     print(armstrong(154))
@@ -100,10 +102,10 @@ def whichTriangle(sideOne: float, sideTwo: float, sideThree: float) -> str:
     return: str -> 'equilateral', 'isoceles', 'scalene'
     '''
     sides = sorted([sideOne, sideTwo, sideThree])
-    if math.isclose(sides[0], sides[-2]):
+    if math.isclose(sides[0], sides[2]):
         return 'equilateral'
     if math.isclose(sides[0], sides[1]) or math.isclose(sides[1], sides[2]):
-        return 'isoceles'
+        return 'isosceles'
     return 'scalene'
 
 
