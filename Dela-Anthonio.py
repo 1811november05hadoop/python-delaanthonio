@@ -59,7 +59,8 @@ def main():
     assert scrabble('Muzjiks') == 29
     assert armstrong(153)
     assert not armstrong(154)
-    print(primeFactors(10000000))
+    assert primeFactors(48) == [2, 2, 2, 2, 3]
+    assert primeFactors(330) == [2, 3, 5, 11]
     print(pangram('The quick brown fox jumps over the lazy dog'))
     print(pangram('The quick brown fox jumped over the lazy dog'))
     print(sort([5, 3, 4, 2, 1]))
@@ -173,13 +174,13 @@ def primeFactors(number: int) -> List[int]:
     return: list
     '''
     x = 1
-    factors = set()
+    factors = []
     while x <= number:
         x += 1
         while number % x == 0:
-            factors.add(x)
+            factors.append(x)
             number //= x
-    return list(factors)
+    return factors
 
 
 def pangram(sentence: str):
