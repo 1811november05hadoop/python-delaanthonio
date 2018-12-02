@@ -6,8 +6,8 @@ from typing import List
 
 
 '''
-Revature is building a new API! This API contains functions for validating data, 
-solving problems, and encoding data. 
+Revature is building a new API! This API contains functions for validating data,
+solving problems, and encoding data.
 
 The API consists of 10 functions that you must implement.
 
@@ -66,6 +66,7 @@ def main():
     assert sort([5, 3, 4, 2, 1]) == [1, 2, 3, 4, 5]
     assert rotate(13,
                   'abcdefghijklmnopqrstuvwxyz') == 'nopqrstuvwxyzabcdefghijklm'
+    evenAndOdds()
 
 
 def reverse(string: str) -> str:
@@ -75,7 +76,7 @@ def reverse(string: str) -> str:
     Rules:
     - Do NOT use built-in tools
     - Reverse it your own way
-    
+
     param: str
     return: str
     '''
@@ -87,7 +88,7 @@ def acronym(phrase: str) -> str:
     2. Convert a phrase to its acronym. Techies love their TLA (Three Letter
     Acronyms)! Help generate some jargon by writing a program that converts a
     long name like Portable Network Graphics to its acronym (PNG).
-    
+
     param: str
     return: str
     '''
@@ -104,7 +105,7 @@ def whichTriangle(sideOne: float, sideTwo: float, sideThree: float) -> str:
     as having exactly two sides the same length, but for the purposes of this
     exercise we'll say at least two.) A scalene triangle has all sides of
     different lengths.
-    
+
     param: float, float, float
     return: str -> 'equilateral', 'isoceles', 'scalene'
     '''
@@ -126,7 +127,7 @@ def scrabble(word: str) -> int:
 
     3 points for C, 1 point for A, twice 3 points for B, twice 2 points for G, 1
     point for E And to total:
-    
+
     3 + 2*1 + 2*3 + 2 + 1 = 3 + 2 + 6 + 3 = 5 + 9 = 14
 
     param: str
@@ -148,7 +149,7 @@ def armstrong(number: int) -> bool:
     raised to the power of the number of digits.
 
     For example:
-    
+
     9 is an Armstrong number, because 9 = 9^1 = 9 10 is not an Armstrong number,
     because 10 != 1^2 + 0^2 = 2 153 is an Armstrong number, because: 153 = 1^3 +
     5^3 + 3^3 = 1 + 125 + 27 = 153 154 is not an Armstrong number, because: 154
@@ -170,7 +171,7 @@ def primeFactors(number: int) -> List[int]:
     A prime number is only evenly divisible by itself and 1.
 
     Note that 1 is not a prime number.
-    
+
     param: int
     return: list
     '''
@@ -189,12 +190,12 @@ def pangram(sentence: str):
     7. Determine if a sentence is a pangram. A pangram (Greek: παν γράμμα, pan
     gramma, "every letter") is a sentence using every letter of the alphabet at
     least once. The best known English pangram is:
-    
+
     The quick brown fox jumps over the lazy dog.
-    
+
     The alphabet used consists of ASCII letters a to z, inclusive, and is case
     insensitive. Input will not contain non-ASCII symbols.
-    
+
     param: str
     return: bool
     '''
@@ -207,11 +208,11 @@ def sort(numbers: List[int]) -> List[int]:
     '''
     8. Sort list of integers.
     f([2,4,5,1,3,1]) = [1,1,2,3,4,5]
-    
+
     Rules:
     - Do NOT sort it with .sort() or sorted(list) or any built-in tools.
     - Sort it your own way
-    
+
     param: list
     return: list
     '''
@@ -227,12 +228,12 @@ def rotate(key: int, string: str) -> str:
     '''
     9. Create an implementation of the rotational cipher, also sometimes called
     the Caesar cipher.
-    
+
     The Caesar cipher is a simple shift cipher that relies on transposing all the
     letters in the alphabet using an integer key between 0 and 26. Using a key of
     0 or 26 will always yield the same output due to modular arithmetic. The
     letter is shifted for as many values as the value of the key.
-    
+
     The general notation for rotational ciphers is ROT + <key>. The most commonly
     used rotational cipher is ROT13.
 
@@ -260,7 +261,7 @@ def evenAndOdds() -> None:
     '''
     10. Take 10 numbers as input from the user and store all the even numbers in a file called even.txt and
     the odd numbers in a file called odd.txt.
-    
+
     param: none, from the keyboard
     return: nothing
     '''
