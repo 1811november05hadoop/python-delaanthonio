@@ -264,13 +264,14 @@ def evenAndOdds() -> None:
     param: none, from the keyboard
     return: nothing
     '''
-    with open('odd.txt') as odd, open('even.txt') as even:
-        for _ in range(10):
-            num = int(input())
+    with open('odd.txt', 'w') as odd, open('even.txt', 'w') as even:
+        print('Entry 10 integers')
+        for i in range(1, 11):
+            num = int(input('Input integer {}: '.format(i)))
             if num % 2 == 0:
-                even.write(num)
+                even.writelines(str(num) + '\n')
             else:
-                odd.write(num)
+                odd.write(str(num) + '\n')
 
 
 if __name__ == "__main__":
