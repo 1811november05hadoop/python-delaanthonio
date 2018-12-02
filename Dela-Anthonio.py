@@ -61,8 +61,8 @@ def main():
     assert not armstrong(154)
     assert primeFactors(48) == [2, 2, 2, 2, 3]
     assert primeFactors(330) == [2, 3, 5, 11]
-    print(pangram('The quick brown fox jumps over the lazy dog'))
-    print(pangram('The quick brown fox jumped over the lazy dog'))
+    assert pangram('The quick brown fox jumps over the lazy dog')
+    assert not pangram('The quick brown fox jumped over the lazy dog')
     print(sort([5, 3, 4, 2, 1]))
     print(rotate(13, 'abcdefghijklmnopqrstuvwxyz'))
 
