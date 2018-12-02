@@ -39,6 +39,7 @@ Happy Scripting!
 © 2018 Revature. All rights reserved.
 '''
 
+
 def main():
     '''
     Use the main function for testing purposes and to show me results for all functions.
@@ -51,9 +52,13 @@ def main():
     assert whichTriangle(5.0, 5.0, 6.0) == 'isosceles'
     assert whichTriangle(6.0, 5.0, 5.0) == 'isosceles'
     assert whichTriangle(5.0, 5.0, 6.0 - 1.0) == 'equilateral'
-    print(scrabble('Xanax'))
-    print(armstrong(153))
-    print(armstrong(154))
+    assert scrabble('Xanax') == 19
+    assert scrabble('Fire') == 7
+    assert scrabble('Cabbage') == 14
+    assert scrabble('Zip') == 14
+    assert scrabble('Muzjiks') == 29
+    assert armstrong(153)
+    assert not armstrong(154)
     print(primeFactors(10000000))
     print(pangram('The quick brown fox jumps over the lazy dog'))
     print(pangram('The quick brown fox jumped over the lazy dog'))
@@ -128,11 +133,11 @@ def scrabble(word: str) -> int:
     score_of = {}
     values = [('aeioulnrst', 1), ('dg', 2), ('bcmp', 3), ('fhvwy', 4), ('k',
                                                                         5),
-              ('ix', 8), ('qz', 10)]
+              ('jx', 8), ('qz', 10)]
     for letters, val in values:
         for char in letters:
             score_of[char] = val
-    return sum(score_of[letter] for letter in word.lower())
+    return sum(score_of[letter] for letter in word.casefold())
 
 
 def armstrong(number: int) -> bool:
@@ -153,7 +158,7 @@ def armstrong(number: int) -> bool:
     '''
     digits = [int(x) for x in str(number)]
     digit_count = len(digits)
-    return sum(x * digit_count for x in digits) == number
+    return sum(x**digit_count for x in digits) == number
 
 
 def primeFactors(number: int) -> List[int]:
